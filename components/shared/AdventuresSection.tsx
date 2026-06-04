@@ -24,7 +24,7 @@ const data = [
       "/atv1.jpg",
       "/atv2.jpg",
       "/atv3.png",
-      "/atv4.PNG",
+      "/atv4.png",
       "/atv5.jpg",
     ],
   },
