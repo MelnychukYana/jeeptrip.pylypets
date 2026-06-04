@@ -36,7 +36,6 @@ const data = [
       "/snow6.jpg",
       "/snow3.jpg",
       "/snow4.jpg",
-      "/snow5.png",
     ],
   },
   {
