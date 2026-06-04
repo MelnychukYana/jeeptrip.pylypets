@@ -19,13 +19,13 @@ const data = [
   },
   {
     title: "Квадроцикли",
-    bg: "/IMG_5092.jpg",
+    bg: "/atv1.jpg",
     images: [
-      "/IMG_5092.jpg",
-      "/IMG_1153.jpg",
-      "/IMG_5362.png",
-      "/IMG_5363.PNG",
-      "/IMG_2828.jpg",
+      "/atv1.jpg",
+      "/atv2.jpg",
+      "/atv3.png",
+      "/atv4.PNG",
+      "/atv5.jpg",
     ],
   },
   {
@@ -33,19 +33,19 @@ const data = [
     bg: "/snow2.jpg",
     images: [
       "/snow2.jpg",
-      "/IMG_2176.jpg",
+      "/snow6.jpg",
       "/snow3.jpg",
       "/snow4.jpg",
-      "/snow5.PNG",
+      "/snow5.png",
     ],
   },
   {
     title: "Параплани",
-    bg: "/IMG_5350.png",
+    bg: "/fly1.png",
     images: [
-      "/IMG_5350.png",
-      "/IMG_5364.png",
-      "/IMG_5365.png",
+      "/fly1.png",
+      "/fly2.png",
+      "/fly3.png",
     ],
   },
 ];
