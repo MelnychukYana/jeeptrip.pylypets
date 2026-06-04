@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
@@ -29,6 +30,7 @@ export default function RootLayout({
     <html lang="uk">
       <body className={`${inter.variable} ${bebas.variable} font-sans`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
