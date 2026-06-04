@@ -8,13 +8,13 @@ import { motion } from "framer-motion";
 const data = [
   {
     title: "Джип-тури",
-    bg: "/IMG_7259.jpg",
+    bg: "/jeep1.jpg",
     images: [
-      "/IMG_7259.jpg",
-      "/IMG_5353.png",
-      "/IMG_7258.jpg",
-      "/IMG_7852.jpg",
-      "/IMG_7976.jpg",
+      "/jeep1.jpg",
+      "/jeep2.png",
+      "/jeep3.jpg",
+      "/jeep4.jpg",
+      "/jeep5.jpg",
     ],
   },
   {
