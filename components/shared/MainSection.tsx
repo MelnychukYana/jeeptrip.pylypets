@@ -19,7 +19,7 @@ export default function MainSection() {
       <div
         className="w-full h-[70vh] flex items-center bg-cover bg-center"
         style={{
-          backgroundImage: "url('/main.png')",
+          backgroundImage: "url('/main.webp')",
         }}
       >
 
