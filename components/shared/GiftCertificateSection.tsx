@@ -284,17 +284,17 @@ await addDoc(collection(db, "giftCertificates"), {
                     ease: [0.22, 1, 0.36, 1],
                   }}
                 >
-                  <div className="w-full border rounded-xl px-4 py-3 text-sm bg-white flex items-center">
-                    <span className="text-gray-500">+380</span>
+                <div className="w-full border rounded-xl px-4 py-3 text-sm bg-white flex items-center gap-1">
+                  <span className="text-gray-500 shrink-0">+380</span>
 
-                    <input
-                      value={form.phone}
-                      onChange={handlePhoneChange}
-                      className="flex-1 outline-none ml-1"
-                      placeholder="XXXXXXXXX"
-                      type="tel"
-                    />
-                  </div>
+                  <input
+                    value={form.phone}
+                    onChange={handlePhoneChange}
+                    className="w-full min-w-0 outline-none bg-transparent"
+                    placeholder="XXXXXXXXX"
+                    type="tel"
+                  />
+                </div>
                 </motion.div>
 
                 {/* MESSENGER */}
