@@ -321,7 +321,7 @@ await addDoc(collection(db, "giftCertificates"), {
                     name="messenger"
                     value={form.messenger}
                     onChange={handleChange}
-                    className="w-full border rounded-xl px-4 py-3 text-sm bg-white"
+                    className="w-full border rounded-xl px-4 py-3 text-sm bg-white appearance-none"
                   >
                     <option>Telegram</option>
                     <option>Instagram</option>
