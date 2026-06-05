@@ -41,6 +41,9 @@ export const loginWithGoogle = async () => {
 export const handleRedirectResult = async (): Promise<User | null> => {
   try {
     const result = await getRedirectResult(auth);
+
+    console.log("REDIRECT RESULT:", result);
+
     return result?.user ?? null;
   } catch (e) {
     console.error(e);

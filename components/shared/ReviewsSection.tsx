@@ -72,21 +72,20 @@ export default function ReviewsSection() {
   const sliderRef =
     useRef<HTMLDivElement | null>(null);
 
+  const [init, setInit] = useState(false);
+
   // AUTH
 useEffect(() => {
-  let unsub: (() => void) | undefined;
+  const unsub = subscribeAuth((u) => {
+    setUser(u);
+    setInit(true);
+  });
 
-  const init = async () => {
-    await handleRedirectResult(); // можна навіть не сетати тут
+  handleRedirectResult().then((u) => {
+    if (u) setUser(u);
+  });
 
-    unsub = subscribeAuth((u) => {
-      setUser(u);
-    });
-  };
-
-  init();
-
-  return () => unsub?.();
+  return () => unsub();
 }, []);
 
     // CHECK SCROLL
@@ -247,6 +246,8 @@ if (!currentUser) {
       checkScroll();
     }, 400);
   };
+
+  if (!init) return <div>Loading...</div>;
 
   return (
     <>
