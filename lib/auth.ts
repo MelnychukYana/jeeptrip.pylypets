@@ -12,32 +12,27 @@ import {
 import { auth } from "./firebase";
 
 const provider = new GoogleAuthProvider();
+
 provider.setCustomParameters({
   prompt: "select_account",
 });
 
-const isMobile = () => {
-  if (typeof window === "undefined") return false;
-
-  return /iPhone|iPad|iPod|Android/i.test(
-    navigator.userAgent
-  );
-};
-
-// 🔐 LOGIN
-export const loginWithGoogle = async () => {
+// 🔐 LOGIN (popup → fallback redirect)
+export const loginWithGoogle = async (): Promise<User | null> => {
   await setPersistence(auth, browserLocalPersistence);
 
-  if (isMobile()) {
+  try {
+    const result = await signInWithPopup(auth, provider);
+    return result.user;
+  } catch (popupError) {
+    console.warn("Popup login failed, switching to redirect...", popupError);
+
     await signInWithRedirect(auth, provider);
     return null;
   }
-
-  const result = await signInWithPopup(auth, provider);
-  return result.user;
 };
 
-// 🔄 ОБРОБКА REDIRECT (МОБІЛКА)
+// 🔄 ОБРОБКА REDIRECT (МОБІЛКА / fallback)
 let redirectHandled = false;
 
 export const handleRedirectResult = async (): Promise<User | null> => {
@@ -46,8 +41,12 @@ export const handleRedirectResult = async (): Promise<User | null> => {
 
   try {
     const result = await getRedirectResult(auth);
-    return result?.user ?? null;
-  } catch {
+
+    if (!result?.user) return null;
+
+    return result.user;
+  } catch (error) {
+    console.error("Redirect auth error:", error);
     return null;
   }
 };

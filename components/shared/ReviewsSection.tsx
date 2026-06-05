@@ -74,15 +74,20 @@ export default function ReviewsSection() {
 
   // AUTH
 useEffect(() => {
+  let mounted = true;
+
   const unsub = subscribeAuth((u) => {
-    setUser(u);
+    if (mounted) {
+      setUser(u);
+    }
   });
 
-  handleRedirectResult().then((u) => {
-    if (u) setUser(u);
-  });
+  handleRedirectResult().catch(console.error);
 
-  return () => unsub();
+  return () => {
+    mounted = false;
+    unsub();
+  };
 }, []);
 
     // CHECK SCROLL
