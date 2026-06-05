@@ -317,16 +317,22 @@ await addDoc(collection(db, "giftCertificates"), {
                     ease: [0.22, 1, 0.36, 1],
                   }}
                 >
+                <div className="relative w-full border rounded-xl bg-white flex items-center px-4 py-3">
                   <select
                     name="messenger"
                     value={form.messenger}
                     onChange={handleChange}
-                    className="w-full border rounded-xl px-4 py-3 text-sm bg-white appearance-none"
+                    className="w-full bg-transparent text-sm outline-none appearance-none"
                   >
                     <option>Telegram</option>
                     <option>Instagram</option>
                     <option>WhatsApp</option>
                   </select>
+
+                  <div className="absolute right-3 text-gray-400 pointer-events-none">
+                    ▼
+                  </div>
+                </div>
                 </motion.div>
 
                 {/* COMMENT */}
