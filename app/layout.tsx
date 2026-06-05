@@ -17,8 +17,57 @@ const bebas = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: "JeepTrip Pylypets",
-  description: "Jeep tours and paragliding in Pylypets",
+  metadataBase: new URL("https://jeeptrip-pylypets.com.ua"),
+
+  title: {
+    default: "JeepTrip Pylypets — Джип тури та параплани в Пилипці",
+    template: "%s | JeepTrip Pylypets",
+  },
+
+  description:
+    "Джип тури, параплани, квадроцикли та снігоходи у Пилипці. Активний відпочинок у Карпатах з найкращими маршрутами та інструкторами.",
+
+  keywords: [
+    "джип тури Пилипець",
+    "параплани Карпати",
+    "квадроцикли Пилипець",
+    "снігоходи Карпати",
+    "активний відпочинок Карпати",
+  ],
+
+  alternates: {
+    canonical: "https://jeeptrip-pylypets.com.ua",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "JeepTrip Pylypets — Джип тури та параплани",
+    description:
+      "Джип тури, параплани, квадроцикли та снігоходи у Пилипці. Активний відпочинок у Карпатах.",
+    url: "https://jeeptrip-pylypets.com.ua",
+    siteName: "JeepTrip Pylypets",
+    images: [
+      {
+        url: "/preview.jpg",
+        width: 1200,
+        height: 630,
+        alt: "JeepTrip Pylypets — Карпати",
+      },
+    ],
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "JeepTrip Pylypets — Джип тури та параплани",
+    description:
+      "Джип тури, параплани, квадроцикли та снігоходи у Пилипці.",
+    images: ["/preview.jpg"],
+  },
 };
 
 export default function RootLayout({
