@@ -6,27 +6,24 @@ import {
 
 import { auth, provider } from "./firebase";
 
-// 👉 запуск логіну
 export const loginWithGoogle = async () => {
   try {
     const result = await signInWithPopup(auth, provider);
     return result.user;
   } catch (error) {
-    console.warn("Popup failed → redirect fallback", error);
+    console.warn("Popup blocked → redirect", error);
 
     await signInWithRedirect(auth, provider);
     return null;
   }
 };
 
-// 👉 ОБОВʼЯЗКОВО для мобілок
 export const handleRedirectResult = async () => {
   try {
     const result = await getRedirectResult(auth);
-
-    return result?.user || null;
+    return result?.user ?? null;
   } catch (e) {
-    console.error("Redirect error:", e);
+    console.error(e);
     return null;
   }
 };

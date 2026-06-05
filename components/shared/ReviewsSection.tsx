@@ -74,14 +74,23 @@ export default function ReviewsSection() {
     useRef<HTMLDivElement | null>(null);
 
   // AUTH
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (u) => {
+      setUser(u);
+    });
 
-useEffect(() => {
-  const unsub = onAuthStateChanged(auth, setUser);
+    const initRedirect = async () => {
+      const user = await handleRedirectResult();
 
-  handleRedirectResult().catch(console.error);
+      if (user) {
+        setUser(user);
+      }
+    };
 
-  return () => unsub();
-}, []);
+    initRedirect();
+
+    return () => unsub();
+  }, []);
 
     // CHECK SCROLL
   function checkScroll () {
