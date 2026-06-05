@@ -30,6 +30,8 @@ import {
   X,
 } from "lucide-react";
 
+import { handleRedirectResult } from "@/lib/auth";
+
 import { db, auth } from "@/lib/firebase";
 import { loginWithGoogle } from "@/lib/auth";
 
@@ -72,16 +74,14 @@ export default function ReviewsSection() {
     useRef<HTMLDivElement | null>(null);
 
   // AUTH
-  useEffect(() => {
-    const unsub = onAuthStateChanged(
-      auth,
-      (u) => {
-        setUser(u);
-      }
-    );
 
-    return () => unsub();
-  }, []);
+useEffect(() => {
+  const unsub = onAuthStateChanged(auth, setUser);
+
+  handleRedirectResult().catch(console.error);
+
+  return () => unsub();
+}, []);
 
     // CHECK SCROLL
   function checkScroll () {
