@@ -15,9 +15,8 @@ import {
 } from "firebase/firestore";
 
 import {
-  onAuthStateChanged,
   signOut,
-  User,
+  User
 } from "firebase/auth";
 
 import Image from "next/image";
@@ -30,12 +29,13 @@ import {
   X,
 } from "lucide-react";
 
-import { handleRedirectResult } from "@/lib/auth";
+import { subscribeAuth, handleRedirectResult } from "@/lib/auth";
 
 import { db, auth } from "@/lib/firebase";
 import { loginWithGoogle } from "@/lib/auth";
 
 import { motion } from "framer-motion";
+
 
 type Review = {
   id: string;
@@ -49,8 +49,7 @@ type Review = {
 };
 
 export default function ReviewsSection() {
-  const [user, setUser] =
-    useState<User | null>(null);
+  const [user, setUser] = useState<User | null>(null);
 
   const [reviews, setReviews] =
     useState<Review[]>([]);
@@ -75,26 +74,19 @@ export default function ReviewsSection() {
 
   // AUTH
 useEffect(() => {
-  const unsub = onAuthStateChanged(auth, (u) => {
-    setUser(u);
-  });
+  let unsub: (() => void) | undefined;
 
   const init = async () => {
-    try {
-      const resultUser = await handleRedirectResult();
+    await handleRedirectResult(); // можна навіть не сетати тут
 
-      // якщо є результат — оновлюємо user
-      if (resultUser) {
-        setUser(resultUser);
-      }
-    } catch (e) {
-      console.error(e);
-    }
+    unsub = subscribeAuth((u) => {
+      setUser(u);
+    });
   };
 
   init();
 
-  return () => unsub();
+  return () => unsub?.();
 }, []);
 
     // CHECK SCROLL
@@ -140,8 +132,8 @@ useEffect(() => {
 
 
   // LOGIN
-  const handleLogin = async () => {
-    await loginWithGoogle();
+  const handleLogin = () => {
+    loginWithGoogle();
   };
 
   // LOGOUT
@@ -175,16 +167,13 @@ useEffect(() => {
     setLoading(true);
 
 try {
-  let currentUser = auth.currentUser;
+  const currentUser = user;
 
-  if (!currentUser) {
-    currentUser = await loginWithGoogle();
-  }
-
-  if (!currentUser) {
-    setLoading(false);
-    return;
-  }
+if (!currentUser) {
+  setOpenModal(true);
+  setLoading(false);
+  return;
+}
 
   // ✅ 1. створюємо відгук
   const docRef = await addDoc(collection(db, "reviews"), {
