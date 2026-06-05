@@ -8,7 +8,7 @@ export default function SunrisesSection() {
       id="sunrise"
       className="w-full py-28 bg-cover bg-center relative"
       style={{
-        backgroundImage: "url('/sunrise.png')",
+        backgroundImage: "url('/sunrise.webp')",
         backgroundPosition: "70% center",
         backgroundSize: "cover",
       }}

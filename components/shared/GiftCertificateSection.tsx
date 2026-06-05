@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Image from "next/image";
 
 import {
@@ -27,31 +27,34 @@ export default function GiftCertificateSection() {
   });
 
   // 🔥 PHONE HANDLER (СТАБІЛЬНИЙ)
-  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = e.target.value;
+  const handlePhoneChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      let value = e.target.value;
 
-    // прибираємо все крім цифр
-    value = value.replace(/\D/g, "");
+      value = value.replace(/\D/g, "");
+      value = value.slice(0, 9);
 
-    // тільки 9 цифр
-    value = value.slice(0, 9);
+      setForm((prev) => ({
+        ...prev,
+        phone: value,
+      }));
+    },
+    []
+  );
 
-    setForm((prev) => ({
-      ...prev,
-      phone: value,
-    }));
-  };
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    setForm((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  const handleChange = useCallback(
+    (
+      e: React.ChangeEvent<
+        HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+      >
+    ) => {
+      setForm((prev) => ({
+        ...prev,
+        [e.target.name]: e.target.value,
+      }));
+    },
+    []
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -80,14 +83,6 @@ export default function GiftCertificateSection() {
         createdAt: serverTimestamp(),
       });
 
-await addDoc(collection(db, "giftCertificates"), {
-  customerName: form.customerName,
-  recipientName: form.recipientName,
-  phone: `+380${form.phone}`,
-  messenger: form.messenger,
-  comment: form.comment,
-  createdAt: serverTimestamp(),
-});
 
     // 👇 TELEGRAM NOTIFICATION
     await fetch("/api/telegram", {
@@ -145,6 +140,7 @@ await addDoc(collection(db, "giftCertificates"), {
                 src="/gift.png"
                 alt="Подарунковий сертифікат"
                 fill
+                sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover"
               />
             </div>

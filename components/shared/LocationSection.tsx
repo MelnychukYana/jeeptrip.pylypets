@@ -1,8 +1,27 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function LocationSection() {
+  const [showMap, setShowMap] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowMap(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    const el = document.getElementById("location-map");
+    if (el) observer.observe(el);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="location" className="w-full py-10 bg-[#fcfaf5]">
 
@@ -21,17 +40,16 @@ export default function LocationSection() {
         {/* CONTENT */}
         <div className="mt-10 grid md:grid-cols-2 gap-6 items-start">
 
-          {/* LEFT SIDE */}
+          {/* LEFT SIDE (без змін) */}
           <div>
 
             <p className="text-gray-700 leading-relaxed">
-              Ми знаходимось у селі{" "}
+              Ми зна знаходимось у селі{" "}
               <span className="font-semibold text-black">Пилипець</span> —
               гірському курорті Карпат, де починаються наші тури, світанки
               та польоти над горами.
             </p>
 
-            {/* HOW TO GET */}
             <div className="mt-6">
 
               <h4 className="text-2xl md:text-3xl font-bold text-[#FF8A3D]">
@@ -55,8 +73,9 @@ export default function LocationSection() {
 
           </div>
 
-          {/* MAP */}
+          {/* MAP (ОПТИМІЗОВАНО ТІЛЬКИ ЦЕ) */}
           <motion.div
+            id="location-map"
             className="overflow-hidden rounded-[28px] h-[380px] shadow-lg"
             initial="hidden"
             whileInView="show"
@@ -78,15 +97,21 @@ export default function LocationSection() {
             }}
           >
 
-            <iframe
-              src="https://www.google.com/maps?q=Pylypets%20Ukraine&output=embed&z=13"
-              className="w-full h-full border-0"
-              loading="lazy"
-              style={{
-                filter:
-                  "sepia(0.18) saturate(1.25) hue-rotate(-12deg) brightness(1.05)",
-              }}
-            />
+            {showMap ? (
+              <iframe
+                src="https://www.google.com/maps?q=Pylypets%20Ukraine&output=embed&z=13"
+                className="w-full h-full border-0"
+                loading="lazy"
+                style={{
+                  filter:
+                    "sepia(0.18) saturate(1.25) hue-rotate(-12deg) brightness(1.05)",
+                }}
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-gray-500 text-sm">
+                Завантаження карти...
+              </div>
+            )}
 
           </motion.div>
 
