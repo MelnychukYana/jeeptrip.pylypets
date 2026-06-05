@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "JeepTrip Pylypets — Джип тури та параплани",
+    title: "Активний відпочинок у Пилипці, Карпати — тури та пригоди",
     description:
       "Джип тури, параплани, квадроцикли та снігоходи у Пилипці. Активний відпочинок у Карпатах.",
     url: "https://jeeptrip-pylypets.com.ua",
