@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     "квадроцикли Пилипець",
     "снігоходи Карпати",
     "активний відпочинок Карпати",
+    "джип тріп Пилипець",
+    "jeeptrip",
+    "jeep trip",
+    "pylypets",
+    "Пилипець",
   ],
 
   alternates: {
