@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://jeeptrip-pylypets.com.ua"),
 
   title: {
-    default: "JeepTrip Pylypets — Джип тури та параплани в Пилипці",
+    default: "Джип тури Пилипець — пригоди в Карпатах на джипах",
     template: "%s | JeepTrip Pylypets",
   },
 
