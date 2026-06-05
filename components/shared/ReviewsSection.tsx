@@ -29,7 +29,7 @@ import {
   X,
 } from "lucide-react";
 
-import { subscribeAuth, handleRedirectResult } from "@/lib/auth";
+import { subscribeAuth, handleRedirectResult} from "@/lib/auth";
 
 import { db, auth } from "@/lib/firebase";
 import { loginWithGoogle } from "@/lib/auth";
@@ -72,13 +72,10 @@ export default function ReviewsSection() {
   const sliderRef =
     useRef<HTMLDivElement | null>(null);
 
-  const [init, setInit] = useState(false);
-
   // AUTH
 useEffect(() => {
   const unsub = subscribeAuth((u) => {
     setUser(u);
-    setInit(true);
   });
 
   handleRedirectResult().then((u) => {
@@ -246,8 +243,6 @@ if (!currentUser) {
       checkScroll();
     }, 400);
   };
-
-  if (!init) return <div>Loading...</div>;
 
   return (
     <>

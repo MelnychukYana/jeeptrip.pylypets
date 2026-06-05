@@ -38,15 +38,16 @@ export const loginWithGoogle = async () => {
 };
 
 // 🔄 ОБРОБКА REDIRECT (МОБІЛКА)
+let redirectHandled = false;
+
 export const handleRedirectResult = async (): Promise<User | null> => {
+  if (redirectHandled) return null;
+  redirectHandled = true;
+
   try {
     const result = await getRedirectResult(auth);
-
-    console.log("REDIRECT RESULT:", result);
-
     return result?.user ?? null;
-  } catch (e) {
-    console.error(e);
+  } catch {
     return null;
   }
 };
