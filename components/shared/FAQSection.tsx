@@ -95,7 +95,7 @@ export default function FAQSection() {
 
             <p className="text-gray-700 leading-relaxed">
               <span className="font-semibold text-black">Ні, оплачується окремо.</span>{" "}
-              750 грн з особи (від 4 людей у машині) або 2500 грн за авто.
+              700 грн з особи (від 4 людей у машині) або 2500 грн за авто.
             </p>
           </div>
 
