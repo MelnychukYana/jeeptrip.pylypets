@@ -12,12 +12,15 @@ export default function ParaglidingSection() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "TouristAttraction",
-              name: "Польоти на парапланах Пилипець",
-              areaServed: "Пилипець, Україна",
-              description:
-                "Тандемні польоти на параплані в Пилипці з видом на Карпати.",
+            "@context": "https://schema.org",
+            "@type": "TouristAttraction",
+            "name": "Політ на параплані Пилипець",
+            "description": "Тандемні польоти на параплані в Пилипці над Карпатами та горою Гимба.",
+            "areaServed": "Пилипець, Україна",
+            "touristType": "AdventureTourists",
+            "keywords": "параплан пилипець, політ карпати, тандемний політ",
+            "image": "https://www.jeeptrip-pylypets.com.ua//par4.webp",
+            "url": "https://www.jeeptrip-pylypets.com.ua/paragliding"
             }),
           }}
         />

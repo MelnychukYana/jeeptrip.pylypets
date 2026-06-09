@@ -11,7 +11,7 @@ import SunrisesSection from "@/components/shared/SunriseSection";
 import AdventuresSection from "@/components/shared/AdventuresSection";
 import LocationSection from "@/components/shared/LocationSection";
 import FAQSection from "@/components/shared/FAQSection";
-import ParaglidingSection from "@/components/shared/ParaglidingSection";
+//import ParaglidingSection from "@/components/shared/ParaglidingSection";
 import Footer from "@/components/layout/Footer";
 
 import LoadingScreen from "@/components/ui/LoadingScreen";
@@ -43,7 +43,7 @@ export default function Home() {
       <PriceSection />
       <GiftCertificateSection />
       <AdventuresSection />
-      <ParaglidingSection />
+      {/*<ParaglidingSection /> */}
       <FAQSection />
       <LocationSection />
       {/* <ReviewsSection /> */}
