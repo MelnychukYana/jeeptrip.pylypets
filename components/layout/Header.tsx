@@ -96,11 +96,11 @@ export default function Header() {
           <button onClick={() => scrollToSection("location", "/location")} className={linkClass}>
             Локація
           </button>
-
+{/*
           <button onClick={() => scrollToSection("reviews", "/reviews")} className={linkClass}>
             Відгуки
           </button>
-
+*/}
         </nav>
 
         {/* SOCIALS */}
@@ -161,11 +161,11 @@ export default function Header() {
             <button onClick={() => scrollToSection("location", "/location")} className={linkClass}>
               Локація
             </button>
-
+{/*
             <button onClick={() => scrollToSection("reviews", "/reviews")} className={linkClass}>
               Відгуки
             </button>
-
+*/}
             {/* SOCIALS MOBILE */}
             <div className="flex gap-4 pt-3 border-t border-white/20 text-2xl">
               <FaInstagram className={iconClass} />

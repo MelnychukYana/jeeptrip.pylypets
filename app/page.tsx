@@ -7,7 +7,7 @@ import MainSection from "@/components/shared/MainSection";
 import PriceSection from "@/components/shared/PriceSection";
 import GiftCertificateSection from "@/components/shared/GiftCertificateSection";
 import SunrisesSection from "@/components/shared/SunriseSection";
-import ReviewsSection from "@/components/shared/ReviewsSection";
+//import ReviewsSection from "@/components/shared/ReviewsSection";
 import AdventuresSection from "@/components/shared/AdventuresSection";
 import LocationSection from "@/components/shared/LocationSection";
 import FAQSection from "@/components/shared/FAQSection";
@@ -44,7 +44,7 @@ export default function Home() {
       <AdventuresSection />
       <FAQSection />
       <LocationSection />
-      <ReviewsSection />
+      {/* <ReviewsSection /> */}
       <Footer />
     </>
   );
