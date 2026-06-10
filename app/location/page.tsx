@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "Де проходять джип тури та політ на параплані в Пилипці. Гора Гимба, Боржавський хребет, Закарпаття — точні локації активного відпочинку в Карпатах.",
 
   alternates: {
-    canonical: "/location",
+    canonical: "https://jeeptrip-pylypets.com.ua/location",
   },
 
   keywords: [
