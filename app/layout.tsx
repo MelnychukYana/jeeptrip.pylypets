@@ -3,6 +3,10 @@ import { Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+
+
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
   variable: "--font-inter",
@@ -83,7 +87,9 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body className={`${inter.variable} ${bebas.variable} font-sans`}>
+        <Header />
         {children}
+        <Footer />
         <Analytics />
       </body>
     </html>

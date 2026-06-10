@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-import Header from "@/components/layout/Header";
 import MainSection from "@/components/shared/MainSection";
 import PriceSection from "@/components/shared/PriceSection";
 import GiftCertificateSection from "@/components/shared/GiftCertificateSection";
@@ -12,7 +11,6 @@ import AdventuresSection from "@/components/shared/AdventuresSection";
 import LocationSection from "@/components/shared/LocationSection";
 import FAQSection from "@/components/shared/FAQSection";
 import ParaglidingSection from "@/components/shared/ParaglidingSection";
-import Footer from "@/components/layout/Footer";
 
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import { useScrollRoute } from "@/components/ui/useScrollRoute";
@@ -25,7 +23,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // ⬅️ час загрузки (2 сек)
+    }, 800); // ⬅️ час загрузки (2 сек)
 
     return () => clearTimeout(timer);
   }, []);
@@ -36,7 +34,6 @@ export default function Home() {
 
   return (
     <>
-      <Header />
 
       <MainSection />
       <SunrisesSection />
@@ -47,7 +44,6 @@ export default function Home() {
       <FAQSection />
       <LocationSection />
       {/* <ReviewsSection /> */}
-      <Footer />
     </>
   );
 }
