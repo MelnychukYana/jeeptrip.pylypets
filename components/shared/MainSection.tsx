@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 
 export default function MainSection() {
   return (
-    <section id="home" className="w-full bg-white">
+    <section id="home" className="w-full">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

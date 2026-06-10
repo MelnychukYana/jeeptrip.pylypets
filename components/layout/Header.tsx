@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import { FaInstagram, FaTelegramPlane, FaPhoneAlt } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 export default function Header() {
   const [open, setOpen] = useState(false);
 
@@ -17,21 +20,6 @@ export default function Header() {
   const linkClass =
     "hover:text-[#FF8A3D] hover:scale-105 transition-all duration-200 origin-center inline-block";
 
-  const scrollToSection = (id: string, path: string) => {
-    const el = document.getElementById(id);
-
-    if (!el) return;
-
-    window.history.pushState({}, "", path);
-
-    el.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-
-    setOpen(false);
-  };
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -42,6 +30,35 @@ export default function Header() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  const pathname = usePathname();
+
+useEffect(() => {
+  const id = sessionStorage.getItem("scrollTo");
+  if (!id) return;
+
+  let attempts = 0;
+
+  const tryScroll = () => {
+    const el = document.getElementById(id);
+
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      sessionStorage.removeItem("scrollTo");
+      return;
+    }
+
+    if (attempts < 20) {
+      attempts++;
+      requestAnimationFrame(tryScroll);
+    }
+  };
+
+  requestAnimationFrame(tryScroll);
+}, [pathname]);
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 flex justify-center">
@@ -69,39 +86,39 @@ export default function Header() {
         {/* DESKTOP MENU */}
         <nav className="hidden md:flex items-center gap-6 text-black text-sm uppercase">
 
-          <button onClick={() => scrollToSection("home", "/")} className={linkClass}>
+          <Link href="/" className={linkClass} onClick={() => setOpen(false)}>
             Головна
-          </button>
+          </Link>
 
-          <button onClick={() => scrollToSection("sunrise", "/sunrise")} className={linkClass}>
+          <Link href="/sunrise" className={linkClass} onClick={() => setOpen(false)}>
             Світанок
-          </button>
+          </Link>
 
-          <button onClick={() => scrollToSection("prices", "/prices")} className={linkClass}>
+          <Link href="/prices" className={linkClass} onClick={() => setOpen(false)}>
             Ціни
-          </button>
+          </Link>
 
-          <button onClick={() => scrollToSection("certificate", "/certificate")} className={linkClass}>
+          <Link href="/certificate" className={linkClass} onClick={() => setOpen(false)}>
             Сертифікат
-          </button>
+          </Link>
 
-          <button onClick={() => scrollToSection("gallery", "/gallery")} className={linkClass}>
+          <Link href="/gallery" className={linkClass} onClick={() => setOpen(false)}>
             Наші пригоди
-          </button>
-        
-          <button onClick={() => scrollToSection("paragliding", "/paragliding")} className={linkClass}>
+          </Link>
+      
+          <Link href="/paragliding" className={linkClass} onClick={() => setOpen(false)}>
             Параплан
-          </button>
+          </Link>
 
-          <button onClick={() => scrollToSection("faq", "/faq")} className={linkClass}>
+          <Link href="/faq" className={linkClass} onClick={() => setOpen(false)}>
             FAQ
-          </button>
+          </Link>
 
-          <button onClick={() => scrollToSection("location", "/location")} className={linkClass}>
+          <Link href="/location" className={linkClass} onClick={() => setOpen(false)}>
             Локація
-          </button>
+          </Link>
 {/*
-          <button onClick={() => scrollToSection("reviews", "/reviews")} className={linkClass}>
+          <button onClick={() => navigate("reviews", "/reviews")} className={linkClass}>
             Відгуки
           </button>
 */}
@@ -138,39 +155,39 @@ export default function Header() {
 
           <div className={`${glass} rounded-3xl p-5 flex flex-col gap-4`}>
 
-            <button onClick={() => scrollToSection("home", "/")} className={linkClass}>
+            <Link href="/" className={linkClass} onClick={() => setOpen(false)}>
               Головна
-            </button>
+            </Link>
 
-            <button onClick={() => scrollToSection("sunrise", "/sunrise")} className={linkClass}>
+            <Link href="/sunrise" className={linkClass} onClick={() => setOpen(false)}>
               Світанок
-            </button>
+            </Link>
 
-            <button onClick={() => scrollToSection("prices", "/prices")} className={linkClass}>
+            <Link href="/prices" className={linkClass} onClick={() => setOpen(false)}>
               Ціни
-            </button>
+            </Link>
 
-            <button onClick={() => scrollToSection("certificate", "/certificate")} className={linkClass}>
+            <Link href="/certificate" className={linkClass} onClick={() => setOpen(false)}>
               Сертифікат
-            </button>
+            </Link>
 
-            <button onClick={() => scrollToSection("gallery", "/gallery")} className={linkClass}>
+            <Link href="/gallery" className={linkClass} onClick={() => setOpen(false)}>
               Наші пригоди
-            </button>
+            </Link>
 
-            <button onClick={() => scrollToSection("paragliding", "/paragliding")} className={linkClass}>
+            <Link href="/paragliding" className={linkClass} onClick={() => setOpen(false)}>
               Параплан
-            </button>
+            </Link>
 
-            <button onClick={() => scrollToSection("faq", "/faq")} className={linkClass}>
+            <Link href="/faq" className={linkClass} onClick={() => setOpen(false)}>
               FAQ
-            </button>
+            </Link>
 
-            <button onClick={() => scrollToSection("location", "/location")} className={linkClass}>
+            <Link href="/location" className={linkClass} onClick={() => setOpen(false)}>
               Локація
-            </button>
+            </Link>
 {/*
-            <button onClick={() => scrollToSection("reviews", "/reviews")} className={linkClass}>
+            <button onClick={() => navigate("reviews", "/reviews")} className={linkClass}>
               Відгуки
             </button>
 */}
