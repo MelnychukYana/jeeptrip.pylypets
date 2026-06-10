@@ -88,11 +88,11 @@ export default function Header() {
           <button onClick={() => scrollToSection("gallery", "/gallery")} className={linkClass}>
             Наші пригоди
           </button>
-{/*          
+        
           <button onClick={() => scrollToSection("paragliding", "/paragliding")} className={linkClass}>
             Параплан
           </button>
-*/}
+
           <button onClick={() => scrollToSection("faq", "/faq")} className={linkClass}>
             FAQ
           </button>
@@ -157,11 +157,11 @@ export default function Header() {
             <button onClick={() => scrollToSection("gallery", "/gallery")} className={linkClass}>
               Наші пригоди
             </button>
-{/*
+
             <button onClick={() => scrollToSection("paragliding", "/paragliding")} className={linkClass}>
               Параплан
             </button>
-*/}
+
             <button onClick={() => scrollToSection("faq", "/faq")} className={linkClass}>
               FAQ
             </button>

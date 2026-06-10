@@ -11,6 +11,7 @@ const sections = [
   "faq",
   "location",
   "reviews",
+  "paragliding",
 ];
 
 export function useScrollRoute() {

@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source:
-          "/:section(home|sunrise|prices|certificate|gallery|faq|location|reviews)",
+          "/:section(home|sunrise|prices|certificate|gallery|faq|location|reviews|paragliding)",
         destination: "/",
       },
     ];
