@@ -84,7 +84,7 @@ export default function LocationSection() {
           <div>
 
             <p className="text-gray-700 leading-relaxed">
-              Ми зна знаходимось у селі{" "}
+              Ми знаходимось у селі{" "}
               <span className="font-semibold text-black">Пилипець</span> —
               гірському курорті Карпат, де починаються наші тури, світанки
               та польоти над горами.
