@@ -17,6 +17,68 @@ export default function PriceSection() {
 
   return (
     <section id="prices" className="w-full py-12 bg-[#fcfaf5]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "OfferCatalog",
+            "name": "Тури та розваги в Пилипці",
+            "description":
+              "Ціни на джип-тури, параплан, квадроцикли, снігоходи та світанкові тури в Пилипці та на горі Гимба.",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Джип-тури по Боржавському хребту",
+                "description":
+                  "Панорамні джип-тури з підйомом на гору Гимба та фото-зупинками в Карпатах.",
+                "price": "2500",
+                "priceCurrency": "UAH"
+              },
+              {
+                "@type": "Offer",
+                "name": "Джип на світанку",
+                "description":
+                  "Ранковий тур на Боржавський хребет з видом на світанок над Карпатами.",
+                "price": "5000",
+                "priceCurrency": "UAH"
+              },
+              {
+                "@type": "Offer",
+                "name": "Політ на параплані в Пилипці",
+                "description":
+                  "Тандемний політ над горою Гимба та Боржавою з інструктором.",
+                "price": "3000",
+                "priceCurrency": "UAH"
+              },
+              {
+                "@type": "Offer",
+                "name": "Світанковий політ на параплані",
+                "description":
+                  "Політ на параплані на світанку над Карпатами.",
+                "price": "4000",
+                "priceCurrency": "UAH"
+              },
+              {
+                "@type": "Offer",
+                "name": "Квадроцикли в Пилипці",
+                "description":
+                  "Маршрути лісами та гірськими дорогами з видами на Боржаву.",
+                "price": "1000",
+                "priceCurrency": "UAH"
+              },
+              {
+                "@type": "Offer",
+                "name": "Снігоходи в Карпатах",
+                "description":
+                  "Зимові маршрути засніженими схилами гори Гимба.",
+                "price": "1500",
+                "priceCurrency": "UAH"
+              }
+            ]
+          }),
+        }}
+      />
       <div className="w-[98%] mx-auto px-6">
 
         {/* TITLE */}

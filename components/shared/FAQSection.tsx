@@ -4,6 +4,90 @@ export default function FAQSection() {
       id="faq"
       className="w-full py-10 bg-[#fcfaf5]"
     >
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Де проходять польоти на параплані в Пилипці?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text":
+                  "Польоти проходять у районі Боржавського хребта біля села Пилипець, з панорамними видами на Карпати та гору Гимба."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Чи потрібен досвід для польоту на параплані?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text":
+                  "Ні, польоти відбуваються виключно в тандемі з досвідченим інструктором."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Які обмеження по вазі для польоту на параплані?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text":
+                  "Оптимальна вага для польоту — від 40 до 110 кг."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Чи є вікові обмеження для активностей?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text":
+                  "Вікових обмежень немає, участь можлива за умови відповідного стану здоров'я."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Скільки триває політ на параплані?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text":
+                  "Політ триває приблизно 15–20 хвилин залежно від погодних умов."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Чи можуть снігоходи працювати в будь-який час?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text":
+                  "Снігоходи доступні лише взимку при достатній кількості снігу."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Чи можна керувати квадроциклом самостійно?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text":
+                  "Так, але рух відбувається у супроводі інструктора в колоні."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Коли можуть скасувати політ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text":
+                  "Політ може бути скасований через сильний вітер, дощ, туман або грозу."
+              }
+            }
+          ]
+        }),
+      }}
+    />
+
       <div className="w-[98%] mx-auto px-6">
 
         {/* TITLE */}

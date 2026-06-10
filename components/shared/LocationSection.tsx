@@ -24,7 +24,47 @@ export default function LocationSection() {
 
   return (
     <section id="location" className="w-full py-10 bg-[#fcfaf5]">
-
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Jeep Trip Pylypets",
+            "description":
+              "Організація джип-турів, парапланів, квадроциклів та світанкових поїздок у Пилипці та на горі Гимба в Карпатах.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Пилипець",
+              "addressRegion": "Закарпатська область",
+              "addressCountry": "UA"
+            },
+            "areaServed": [
+              "Пилипець",
+              "Гора Гимба",
+              "Боржавський хребет",
+              "Воловець",
+              "Карпати"
+            ],
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 48.674,
+              "longitude": 23.289
+            },
+            "url": "https://www.jeeptrip-pylypets.com.ua/location",
+            "image": "https://www.jeeptrip-pylypets.com.ua/sunrise.webp",
+            "keywords":
+              "Пилипець як дістатись, Гимба Карпати, джип тури Пилипець, параплан Пилипець, Боржавський хребет",
+            "knowsAbout": [
+              "Jeep tours",
+              "Paragliding",
+              "ATV tours",
+              "Snowmobile tours",
+              "Sunrise tours"
+            ]
+          }),
+        }}
+      />
       {/* CONTAINER */}
       <div className="w-[98%] mx-auto px-6">
 

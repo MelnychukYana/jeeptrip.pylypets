@@ -14,6 +14,34 @@ export default function SunrisesSection() {
       }}
     >
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TouristAttraction",
+            "name": "Світанки на горі Гимба в Пилипці",
+            "description":
+              "Тури на світанок у Карпатах: виїзд до гори Гимба, огляд Боржавського хребта, джип-тури та параплан у Пилипці. Гаряча кава на вершині та панорама хмар над Карпатами.",
+            "areaServed": {
+              "@type": "Place",
+              "name": "Пилипець, Закарпатська область, Україна"
+            },
+            "touristType": "AdventureTourists",
+            "activity": [
+              "Sunrise jeep tour",
+              "Paragliding",
+              "Mountain sightseeing",
+              "Photo tour"
+            ],
+            "keywords":
+              "світанок Гимба, Пилипець світанок, Карпати світанок, джип тур на світанок, параплан світанок, Боржавський хребет",
+            "image": "https://www.jeeptrip-pylypets.com.ua/sunrise.webp",
+            "url": "https://www.jeeptrip-pylypets.com.ua/sunrise"
+          }),
+        }}
+      />
+
       {/* overlay */}
       <div className="absolute inset-0 bg-black/30" />
 

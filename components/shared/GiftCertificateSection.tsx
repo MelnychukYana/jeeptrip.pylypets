@@ -131,6 +131,47 @@ export default function GiftCertificateSection() {
         viewport={{ once: false, amount: 0.3 }}
         transition={{ duration: 0.6, delay: 0.5 }}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Product",
+              "name": "Подарунковий сертифікат JeepTrip Pylypets",
+              "description":
+                "Подарунковий сертифікат на політ на параплані над Карпатами, джип-тури та активні пригоди в Пилипці та на горі Гимба.",
+              "brand": {
+                "@type": "Brand",
+                "name": "JeepTrip Pylypets"
+              },
+              "category": "Adventure Gift Certificate",
+              "image": "https://www.jeeptrip-pylypets.com.ua/gift.png",
+              "areaServed": {
+                "@type": "Place",
+                "name": "Пилипець, Карпати, Україна"
+              },
+              "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock",
+                "priceCurrency": "UAH",
+                "price": "3000",
+                "url": "https://www.jeeptrip-pylypets.com.ua/certificate"
+              },
+              "additionalProperty": [
+                {
+                  "@type": "PropertyValue",
+                  "name": "Тип",
+                  "value": "Подарунковий сертифікат на пригоди"
+                },
+                {
+                  "@type": "PropertyValue",
+                  "name": "Локація",
+                  "value": "Пилипець, гора Гимба, Боржавський хребет"
+                }
+              ]
+            }),
+          }}
+        />
         <div className="w-[98%] mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-6 items-start">
 

@@ -97,7 +97,27 @@ export default function AdventuresSection() {
 
   return (
     <section id="gallery" className="w-full py-14 ">
-
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ImageGallery",
+            "name": "Фото пригод у Пилипці",
+            "description":
+              "Галерея фото джип-турів, квадроциклів, снігоходів та польотів на параплані в Пилипці, на горі Гимба та Боржавському хребті.",
+            "url": "https://www.jeeptrip-pylypets.com.ua/gallery",
+            "keywords":
+              "Пилипець фото, гора Гимба, Боржавський хребет, джип тури Пилипець, квадроцикли Пилипець, снігоходи Пилипець, параплан Пилипець",
+            "image": [
+              "https://www.jeeptrip-pylypets.com.ua/jeep1.jpg",
+              "https://www.jeeptrip-pylypets.com.ua/atv1.jpg",
+              "https://www.jeeptrip-pylypets.com.ua/snow2.jpg",
+              "https://www.jeeptrip-pylypets.com.ua/fly1.png"
+            ]
+          }),
+        }}
+      />
       <div className="w-[98%] mx-auto px-6">
 
         <h2 className="text-3xl md:text-5xl font-bold text-center uppercase">

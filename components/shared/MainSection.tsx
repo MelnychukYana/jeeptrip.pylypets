@@ -14,7 +14,37 @@ import { motion } from "framer-motion";
 export default function MainSection() {
   return (
     <section id="home" className="w-full bg-white">
-
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Jeep Trip Pylypets",
+            "url": "https://www.jeeptrip-pylypets.com.ua/",
+            "description":
+              "Джип-тури, квадроцикли, снігоходи та параплани в Пилипці, на горі Гимба та Боржавському хребті в Карпатах.",
+            "inLanguage": "uk-UA",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Jeep Trip Pylypets",
+              "areaServed": "Пилипець, Карпати, Україна",
+              "knowsAbout": [
+                "Jeep tours",
+                "Paragliding",
+                "ATV tours",
+                "Snowmobile tours",
+                "Sunrise tours"
+              ]
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://www.jeeptrip-pylypets.com.ua/?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          }),
+        }}
+      />
       {/* HERO */}
       <div
         className="w-full h-[70vh] flex items-center bg-cover bg-center"
