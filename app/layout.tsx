@@ -44,10 +44,6 @@ export const metadata: Metadata = {
     "Пилипець",
   ],
 
-  alternates: {
-    canonical: "https://jeeptrip-pylypets.com.ua",
-  },
-
   robots: {
     index: true,
     follow: true,
