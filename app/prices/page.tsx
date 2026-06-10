@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://jeeptrip-pylypets.com.ua/prices",
+    canonical: "/prices",
   },
 
   openGraph: {
