@@ -11,7 +11,11 @@ import {
 
 import { motion } from "framer-motion";
 
+//import Link from "next/link";
+
+
 export default function MainSection() {
+  
   return (
     <section id="home" className="w-full">
       <script
@@ -205,14 +209,111 @@ export default function MainSection() {
                   Емоції, які хочеться дарувати
                 </p>
               </div>
-
             </div>
-
           </div>
 
         </div>
 
       </div>
+
+       <div className="w-[98%] mx-auto mb-12">
+
+        <div className="bg-white/80 backdrop-blur-xl border border-[#FF8A3D] rounded-[40px] p-10 md:p-16 shadow-sm">
+
+          {/* TITLE */}
+          <div className="text-center">
+            <span className="uppercase tracking-[6px] text-[#FF8A3D] font-semibold">
+              Закарпаття • Пилипець • Боржава
+            </span>
+
+            <h2 className="text-3xl md:text-5xl font-bold text-center text-black uppercase mt-4">
+              Пригоди в Карпатах: джипінг, параплани, квадроцикли та снігоходи
+            </h2>
+
+          </div>
+
+          {/* STORY BLOCKS */}
+          <div className="mt-14 space-y-10 text-gray-700 leading-8">
+
+            <div>
+              <h3 className="text-xl font-bold text-black text-[#FF8A3D]">
+                🚙 Джип-тури Пилипець
+              </h3>
+              <p className="mt-1">
+                Джип-тури дозволяють за короткий час піднятися до найвищих точок Боржавського хребта.
+                Маршрути проходять через гірські дороги, лісові ділянки та панорамні майданчики з видом на Карпати.
+                Це один із найпопулярніших форматів відпочинку в Пилипці.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-black">
+                🏍️ Квадроцикли в Пилипці
+              </h3>
+              <p className="mt-1">
+                Катання на квадроциклах — це активний спосіб дослідити Карпати.
+                Маршрути проходять через бездоріжжя, гірські стежки та лісові дороги.
+                Це ідеальний варіант для тих, хто хоче драйву, швидкості та повного занурення в природу.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-black">
+                🪂 Параплани над Пилипцем
+              </h3>
+              <p className="mt-1">
+                Політ на параплані — це найсильніша емоція, яку можна отримати в Карпатах.
+                Ви бачите Боржавський хребет і долини Пилипця з висоти пташиного польоту.
+                Це досвід, який запам’ятовується назавжди.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-black">
+                ❄️ Зимові маршрути та снігоходи
+              </h3>
+              <p className="mt-1">
+                Взимку Пилипець перетворюється на окремий світ.
+                Снігоходи дозволяють дістатися до засніжених вершин,
+                де відкриваються одні з найкращих краєвидів Карпат.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-black">
+                📍 Локації: Гимба, Магура, Великий Верх
+              </h3>
+              <p className="mt-1">
+                Гора Гимба, озеро Магура та Великий Верх — ключові точки Боржавського хребта.
+                Саме тут відкриваються панорамні краєвиди на десятки кілометрів Карпат.
+                Ці локації є основою більшості джип-турів і маршрутів квадроциклів.
+              </p>
+            </div>
+
+          </div>
+          {/* KEYWORDS STRIP */}
+          <div className="mt-14 flex flex-wrap gap-3 justify-center">
+            {[
+              "джип тури Пилипець",
+              "квадроцикли Карпати",
+              "параплан Пилипець",
+              "гора Гимба",
+              "Великий Верх",
+              "озеро Магура",
+              "водоспад Шипіт",
+            ].map((item) => (
+              <span
+                key={item}
+                className="text-xs bg-[#fcfaf5] border px-4 py-2 rounded-full text-gray-700"
+              >
+                #{item}
+              </span>
+            ))}
+          </div>
+
+        </div>
+
+      </div> 
 
     </section>
   );
