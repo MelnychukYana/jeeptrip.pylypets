@@ -54,7 +54,7 @@ export const metadata: Metadata =  {
 
 export default function ParaglidingPage() {
   return (
-    <main className="w-full bg-[#fcfaf5] py-20">
+    <main className="w-full bg-[#fcfaf5] mt-14">
       <ParaglidingSection />
     </main>
   );

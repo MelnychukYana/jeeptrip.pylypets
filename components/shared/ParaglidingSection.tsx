@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ParaglidingSection() {
   return (
-    <section className="w-full py-12 bg-[#fcfaf5]" id="paragliding">
+    <section className="w-full py-6 bg-[#fcfaf5]" id="paragliding">
       <div className="w-[98%] mx-auto px-6">
 
         {/* SEO Schema */}
@@ -26,7 +26,7 @@ export default function ParaglidingSection() {
         />
 
         {/* HEADER */}
-        <div className="max-w-5xl mx-auto text-center mb-12">
+        <div className="max-w-5xl mx-auto text-center mb-8">
           <h2 className="text-3xl md:text-5xl font-bold uppercase text-black">
             Політ на параплані в Пилипці
           </h2>
