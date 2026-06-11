@@ -193,10 +193,21 @@ useEffect(() => {
 */}
             {/* SOCIALS MOBILE */}
             <div className="flex gap-4 pt-3 border-t border-white/20 text-2xl">
-              <FaInstagram className={iconClass} />
-              <SiTiktok className={iconClass} />
-              <FaTelegramPlane className={iconClass} />
-              <FaPhoneAlt className={iconClass} />
+              <a href="https://www.instagram.com/jeeptrip.pylypets/" target="_blank">
+                <FaInstagram className={iconClass} />
+              </a>
+
+              <a href="https://www.tiktok.com/@jeeptrip.pylypets" target="_blank">
+                <SiTiktok className={iconClass} />
+              </a>
+
+              <a href="https://t.me/mcherepp" target="_blank">
+                <FaTelegramPlane className={iconClass} />
+              </a>
+
+              <a href="tel:+380955077567">
+                <FaPhoneAlt className={iconClass} />
+              </a>
             </div>
 
           </div>
